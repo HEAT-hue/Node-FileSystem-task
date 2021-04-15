@@ -9,7 +9,7 @@ const myDir = path.dirname(__filename);
 //get result directory
 const resultDir = path.join(myDir, "result");
 
-//get post.txt file path
+//get posts.txt file path
 const postFile = path.join(resultDir,"posts.txt");
 
 //url of API
@@ -25,7 +25,7 @@ const req = https.get(url, (res) => {
 
   //whole response received
   res.on("end", () => {
-    //write result to post.txt file
+    //write result to posts.txt file
     fs.writeFileSync(postFile, data, (err) => {
         if (err) throw err;
     });
